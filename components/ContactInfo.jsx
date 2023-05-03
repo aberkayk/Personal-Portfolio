@@ -43,18 +43,10 @@ export default function ContactInfo({ setOpenInfo, openInfo }) {
                         Email
                       </Dialog.Title>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500 underline">
                           <Link href="/#contact">
                             aberkayk@gmail.com
                           </Link>
-                        </p>
-                      </div>
-                      <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 mt-4">
-                        Phone Number
-                      </Dialog.Title>
-                      <div className="mt-2">
-                        <p className="text-sm text-gray-500">
-                          +90 506 669 57 96
                         </p>
                       </div>
                     </div>
