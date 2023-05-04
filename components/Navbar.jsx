@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsPersonLinesFill, BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
@@ -12,7 +12,23 @@ const Navbar = () => {
   const [navBg, setNavBg] = useState("#ecf0f3")
   const [linkColor, setLinkColor] = useState("#1f2937")
   const [openInfo, setOpenInfo] = useState(false)
+  const menuRef = useRef()
   const router = useRouter()
+
+  const handleNav = () => {
+    setNav(!nav)
+  }
+
+
+  if (nav === true) {
+    const handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setNav(false)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+  }
+
 
   useEffect(() => {
     if (
@@ -28,10 +44,6 @@ const Navbar = () => {
       setLinkColor("#1f2937")
     }
   }, [router])
-
-  const handleNav = () => {
-    setNav(!nav)
-  }
 
   useEffect(() => {
     const handleShadow = () => {
@@ -51,19 +63,19 @@ const Navbar = () => {
         <div className='w-full flex sm:justify-start md:justify-center'>
           <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
             <Link scroll={false} href='/#home'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
+              <li className='ml-10 text-sm uppercase hover:text-[#5651e5] ease-in duration-300'>Home</li>
             </Link>
             <Link scroll={false} href='/#about'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
+              <li className='ml-10 text-sm uppercase hover:text-[#5651e5] ease-in duration-300'>About</li>
             </Link>
             <Link scroll={false} href='/#skills'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Skills</li>
+              <li className='ml-10 text-sm uppercase hover:text-[#5651e5] ease-in duration-300'>Skills</li>
             </Link>
             <Link scroll={false} href='/#projects'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
+              <li className='ml-10 text-sm uppercase hover:text-[#5651e5] ease-in duration-300'>Projects</li>
             </Link>
-            <Link scroll={false} href='/#contact'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
+            <Link onClick={() => setNav(false)} scroll={false} href='/#contact'>
+              <li className='ml-10 text-sm uppercase hover:text-[#5651e5] ease-in duration-300'>Contact</li>
             </Link>
           </ul>
           {/* <button className='p-2 absolute right-[2%] bottom-[50%] translate-y-[50%] rounded-full' onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
@@ -73,37 +85,39 @@ const Navbar = () => {
           <div onClick={handleNav} className='ml-2 md:hidden'>
             <AiOutlineMenu size={25} />
           </div>
-          {/* Hamburger Icon Start */}
+          {/* Hamburger Icon End */}
         </div>
       </div>
 
       {/* Mobile Menu Start */}
-      <div className={!nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''}>
-        <div className={!nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] p-10 h-screen bg-[#ecf0f3] ease-in duration-500'
+      <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70' : ''}>
+        <div ref={menuRef} className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] p-10 h-screen bg-[#ecf0f3] ease-in duration-500'
           : 'fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] p-10 h-screen bg-[#ecf0f3] ease-in duration-500'}>
-          <div>
-            <div className='flex w-full items-center justify-end'>
-              <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer mb-10'>
-                <AiOutlineClose />
-              </div>
+          <div className='flex w-full items-center justify-end'>
+            <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer mb-10'>
+              <AiOutlineClose />
             </div>
           </div>
           <div className='py-4 flex flex-col'>
-            <ul className='uppercase w-[60%]'>
+            <ul className='uppercase w-[80%]'>
               <Link scroll={false} href='/#home'>
-                <li onClick={() => setNav(!nav)} className='py-4 text-sm'>Home</li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm hover:text-[#5651e5] ease-in duration-300'>Home</li>
+                <hr />
               </Link>
               <Link scroll={false} href='/#about'>
-                <li onClick={() => setNav(!nav)} className='py-4 text-sm'>About</li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm hover:text-[#5651e5] ease-in duration-300'>About</li>
+                <hr />
               </Link>
               <Link scroll={false} href='/#skills'>
-                <li onClick={() => setNav(!nav)} className='py-4 text-sm'>Skills</li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm hover:text-[#5651e5] ease-in duration-300'>Skills</li>
+                <hr />
               </Link>
               <Link scroll={false} href='/#projects'>
-                <li onClick={() => setNav(!nav)} className='py-4 text-sm'>Projects</li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm hover:text-[#5651e5] ease-in duration-300'>Projects</li>
+                <hr />
               </Link>
               <Link scroll={false} href='/#contact'>
-                <li onClick={() => setNav(!nav)} className='py-4 text-sm'>Contact</li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm hover:text-[#5651e5] ease-in duration-300'>Contact</li>
               </Link>
             </ul>
             <div className='pt-40'>
@@ -124,7 +138,7 @@ const Navbar = () => {
                     <AiOutlineMail />
                   </div>
                 </Link>
-                <button onClick={() => { setOpenInfo(true), setNav(!nav) }}>
+                <button onClick={() => { setOpenInfo(true), setNav(false) }}>
                   <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
                     <BsPersonLinesFill />
                   </div>

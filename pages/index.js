@@ -4,7 +4,7 @@ import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
-import ContactInfo from '@/components/ContactInfo'
+import Navbar from '@/components/Navbar'
 
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
         <meta name="description" content="I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences. I use HTML, CSS, Javascript, Typescript, React JS, Next Js, Tailwind and Bootstrap for my projects." />
         <link rel="icon" href="/fav.png" />
       </Head>
+      <Navbar />
       <Main />
       <About />
       <Skills />

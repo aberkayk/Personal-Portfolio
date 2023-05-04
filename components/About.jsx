@@ -36,7 +36,7 @@ const About = () => {
         </div>
       </div>
       <div className='max-w-[1240px] m-auto'>
-        <div className='my-5 shadow-xl shadow-gray-400 rounded-xl p-4 hover:scale-105 ease-in duration-300'>
+        <div className='my-5 shadow-xl shadow-gray-400 rounded-xl p-4'>
           <Image src={AboutImg} className='rounded-xl sm:max-w-[350px] md:max-w-[450px] h-auto' alt='/' />
         </div>
       </div>

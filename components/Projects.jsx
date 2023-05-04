@@ -14,10 +14,10 @@ const Projects = () => {
         <p className='text-xl tracking-widest uppercase text-center text-[#5651e5]'>Projects</p>
         <h2 className='py-4 text-center'>What I've Built</h2>
         <div className='grid lg:grid-cols-2 gap-8'>
-          <ProjectItem title='Github Finder' backgroundImg={githubFinder} projectUrl="/github" />
-          <ProjectItem title='Library App' backgroundImg={libraryApp} projectUrl="/library" />
-          <ProjectItem title='Service Finder' backgroundImg={serviceFinder} projectUrl="/serviceFinder" />
-          <ProjectItem title='Rock Paper Scissors' backgroundImg={rockPaperScissors} projectUrl="/rockPaperScissors" />
+          <ProjectItem title='Github Finder' backgroundImg={githubFinder} language={"Javascript"} projectUrl="/github" />
+          <ProjectItem title='Library App' backgroundImg={libraryApp} language={"React JS"} projectUrl="/library" />
+          <ProjectItem title='Service Finder' backgroundImg={serviceFinder} language={"React JS"} projectUrl="/serviceFinder" />
+          <ProjectItem title='Rock Paper Scissors' backgroundImg={rockPaperScissors} language={"Javascript"} projectUrl="/rockPaperScissors" />
         </div>
       </div>
     </div>
