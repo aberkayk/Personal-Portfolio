@@ -4,7 +4,7 @@ import { RiRadioButtonFill } from "react-icons/ri";
 import gymApp from "../public/assets/projects/gymApp.png";
 import Link from "next/link";
 
-const github = () => {
+const gymApp = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -71,4 +71,4 @@ const github = () => {
   );
 };
 
-export default github;
+export default gymApp;
