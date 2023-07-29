@@ -139,7 +139,7 @@ const Navbar = () => {
                   </div>
                 </Link>
                 <button onClick={() => { setOpenInfo(true), setNav(false) }}>
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                  <div className='rounded-full shadow shadow-gray-400 p-3 cursor-pointer hover:shadow-inner ease-in duration-300'>
                     <BsPersonLinesFill />
                   </div>
                 </button>
