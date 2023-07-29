@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { RiRadioButtonFill } from "react-icons/ri";
-import aiChatbot from "../public/assets/projects/aiChatbot.png";
+import aiChatbotImg from "../public/assets/projects/aiChatbot.png";
 import Link from "next/link";
 
 const aiChatbot = () => {

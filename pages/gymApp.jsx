@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { RiRadioButtonFill } from "react-icons/ri";
-import gymApp from "../public/assets/projects/gymApp.png";
+import gymAppImg from "../public/assets/projects/gymApp.png";
 import Link from "next/link";
 
 const gymApp = () => {
@@ -12,7 +12,7 @@ const gymApp = () => {
         <Image
           className="absolute z-1 object-cover"
           fill
-          src={gymApp}
+          src={gymAppImg}
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-0 translate-y-[-50%] text-white z-10 p-4 ml-4">
